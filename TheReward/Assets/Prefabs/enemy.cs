@@ -24,7 +24,6 @@ public class enemy : MonoBehaviour {
 		transform.LookAt(target);
 		cooldown -= Time.deltaTime;
 		if (cooldown < 0 && Vector3.Distance(gameObject.transform.position, target.position) < shooting_range)  {
-			Debug.Log ("fire");
 			cooldown = shoot_delay + Random.Range (0f, 2f);
 			GameObject bullet = Instantiate (bullet_prefab, new Vector3 (transform.position.x, transform.position.y + 0.52f, transform.position.z), transform.rotation);
 			Destroy (bullet, 3f);
